@@ -2,6 +2,9 @@ const express = require("express");
 
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+
+const User = require("./userModel.js");
 const routes = require('./routes');
 const app = express();
 
