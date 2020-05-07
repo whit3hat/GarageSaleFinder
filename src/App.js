@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Layout, Header, Navigation, Textfield, Drawer, Content, Footer, FooterSection, FooterLinkList, HeaderRow } from 'react-mdl';
 import {Link} from 'react-router-dom'
-import Main from './Component/main';
+import Main from './Components/main';
 
 
 
