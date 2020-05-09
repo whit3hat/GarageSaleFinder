@@ -1,0 +1,15 @@
+.mdl-switch_label {
+    visibility: hidden !important; 
+}
+
+.mdl-switch_track {
+    visibility: hidden !important;
+}
+
+.mdl-switch_thumb {
+    visibility: hidden !important;
+}
+
+.mdl-switch {
+    visibility: hidden !important;
+}
