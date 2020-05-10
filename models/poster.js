@@ -3,15 +3,18 @@ var bcrypt = require("bcrypt");
 
 const postSchema = mongoose.postSchema({
     _id: mongoose.Schema.Types.ObjectId,
-    date: {
-        type: Date,
-        default: Date.now
+        date: {
+        type: Array,
       },
       location: {
-        type: Array
+        type: "Point",
+      coordinates:[]
       },
       keyword: {
         type: Array
+      },
+      description: {
+          type: String
       }
     });
 
