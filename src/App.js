@@ -11,6 +11,30 @@ const axios = require('axios').default;
 const URL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs&callback=initMap';
 
 
+/*
+GeoLocation Function
+*/
+
+//URL for the geolocation
+const geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" 
+
+
+function GeoLocation(){
+//take the address from the DB and convert to the geo location to use in the map
+axios.get(`${geoUrl}&key=APIKEY`)
+      .then(function(res) {
+          console.log(res)
+      })
+      .catch(function (err) {
+          console.log(err)
+      })
+      .then(function(res) {
+        
+});
+
+};
+
+
 //base query function
 axios.get(`${URL}=handleResponse`)
     .then(function (res) {
