@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Project 3 – Garage Sale Finder 
+Team Members: Spencer Wood, Joe Huelsman, Val Young-Sang, Audra Kosinski
+
+Elevator Pitch: Creating a functional, user-friendly garage/estate sale application that can search by location, date, or keyword. 
+As A Thrifty Consumer – I want to be able to find garage or estate sales in my area, on certain dates, or containing certain items – this app lets me
+Problem we are solving: Existing applications are not user friendly, search criteria don’t meet our needs, design issues with current sites cause confusion, too many ads, not targeted enough information
+Technologies Used: React, Node.js, Bulma, MongoDB/Mongoose, Express, Heroku, APIs (Google Maps)
+Project Management Tool: Trello
+Spencer & Joe – back end/APIs
+Audra – database/React
+Val – front end/React
+
 ## Available Scripts
 
 In the project directory, you can run:
