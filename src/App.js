@@ -21,7 +21,7 @@ const geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="
 
 function GeoLocation(){
 //take the address from the DB and convert to the geo location to use in the map
-axios.get(`${geoUrl}&key=APIKEY`)
+axios.get(`${geoUrl}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
       .then(function(res) {
           console.log(res)
       })
