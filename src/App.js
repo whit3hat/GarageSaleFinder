@@ -26,7 +26,7 @@ axios.get(`${URL}=handleResponse`)
 
 function App() {
     return (
-        <div style={{ height: '300px', position: 'relative' }}>
+        <div>
             <Layout style={{ background: 'url(https://images.pexels.com/photos/247929/pexels-photo-247929.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) center / cover' }}>
                 <Header transparent title="Garage Sale Finder" style={{ color: 'white' }}>
                     <HeaderRow>
