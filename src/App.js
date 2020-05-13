@@ -7,10 +7,6 @@ import Main from './Components/main';
 //axios variable import for api query
 const axios = require('axios').default;
 
-//URL for google Maps
-const URL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs&callback=initMap';
-
-
 /*
 GeoLocation Function
 */
@@ -40,18 +36,6 @@ axios.get(`${geoUrl}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
 
 };
 
-
-//base query function
-axios.get(`${URL}=handleResponse`)
-    .then(function (res) {
-        console.log(res)
-    })
-    .catch(function (err) {
-        console.log(err)
-    })
-    .then(function () {
-
-    });
 
 
 function App() {
