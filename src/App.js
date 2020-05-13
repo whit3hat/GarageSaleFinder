@@ -19,8 +19,14 @@ GeoLocation Function
 const geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" 
 
 
+//varaibles for the GeoLocation function from the sign up form.
+let address = '';
+let street = '';
+let city = '';
+let state = '';
+
 function GeoLocation(){
-//take the address from the DB and convert to the geo location to use in the map
+//take the address from sign up fields and convert for DB
 axios.get(`${geoUrl}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
       .then(function(res) {
           console.log(res)
