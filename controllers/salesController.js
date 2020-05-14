@@ -1,6 +1,6 @@
 const db = require('../models');
 
-//Defining methods for the salesController
+//Defining methods for the SalesController
 module.exports ={
     findAll: function(req, res) {
         db.Sales
