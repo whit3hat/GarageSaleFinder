@@ -13,15 +13,15 @@ router
     .put(salesController.update)
     .delete(salesController.remove);
 
-router.route('/search')
-    .get(searchController.findAll)
-    .post(searchController.create);
+router.route('/sales')
+    .get(salesController.findAll)
+    .post(salesController.create);
 
-// Matches with 'api/search/:id'
+// Matches with 'api/sales/:id'
 router
-    .route('/search/:id')
-    .get(searchController.findById)
-    .put(searchController.update)
-    .delete(searchController.remove);
+    .route('/sales/:id')
+    .get(salesController.findById)
+    .put(salesController.update)
+    .delete(salesController.remove);
 
 module.exports = router;
