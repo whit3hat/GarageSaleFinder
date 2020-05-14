@@ -1,10 +1,10 @@
 import React from 'react';
-import { Switch } from 'react-mdl';
+import { Switch } from 'react';
 import './main.css';
 import LandingPage from './landingpage';
 import { Route } from 'react-router-dom';
 import Home from './home';
-// import Contact from './contact'
+import  Modal from './modal';
 
 
 
@@ -12,8 +12,7 @@ const Main = () => (
 <Switch>
     <Route exact path= "/" component={LandingPage} />
     <Route path= "/home" component={Home} />
-    {/* <Route path= "/contact" component={Contact} /> */}
-
+    <Route path= "/modal" component={Modal} />
 </Switch>
 )
 
