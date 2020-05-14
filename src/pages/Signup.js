@@ -1,5 +1,5 @@
 import React from 'react';
-import { form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 function Signup() {
 
@@ -54,3 +54,5 @@ function Signup() {
         </Form>
     )
 }
+
+export default Signup;
