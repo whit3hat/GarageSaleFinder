@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Modal from './modal';
-
+import "../../routes/api/sales";
+import "../../routes/api/index"
+var salesData = require("mongoose");
 
 function search(Modal) {
+
+var results = ""
 
 //URL for google Maps
 const URL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs&callback=initMap';
@@ -20,5 +24,27 @@ axios.get(`${URL}=handleResponse`)
 
     });
 };
+
+// Loop through the results array and place a marker for each
+// set of coordinates.
+window.results = function(results) {
+    for (var i = 0; i < results.length; i++) {
+      var coords = results[i].geometry.coordinates;
+      var latLng = new google.maps.LatLng(coords[1],coords[0]);
+      var marker = new google.maps.Marker({
+        position: latLng,
+        map: map
+      });
+    }
+}
+// Map Type
+var myLatlng = new google.maps.LatLng();
+var mapOptions = {
+  zoom: 8,
+  center: myLatlng,
+  mapTypeId: 'roadmap'
+};
+var map = new google.maps.Map(document.getElementById('map'),
+    mapOptions);
 
 export default search;
