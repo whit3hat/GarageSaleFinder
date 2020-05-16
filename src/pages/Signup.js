@@ -1,8 +1,10 @@
 import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, ModalBody, Modal } from 'react-bootstrap';
 
 function Signup() {
     return (
+        <Modal show={true} size="lg">
+            <ModalBody>
         <Form>
             <Form.Group controlId='formFirstName'>
                 <Form.Label>First Name</Form.Label>
@@ -51,6 +53,9 @@ function Signup() {
                 Submit
             </Button>
         </Form>
+        </ModalBody>
+        </Modal>
+
     )
 };
 
