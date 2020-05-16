@@ -6,7 +6,7 @@ import Signup from './Signup';
 
 function Main(){
     return (
-    <Navbar bg="light" expand="lg">
+  <Navbar bg="light" expand="lg">
   <Navbar.Brand href="/landingpage">Garage Sale Finder</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
