@@ -1,7 +1,7 @@
 import React from 'react';
 import './main.css';
 import { Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
-import Results from './Results';
+// import Results from './Results';
 import Signup from './Signup';
 
 function Main(){
@@ -13,7 +13,7 @@ function Main(){
     <Nav className="mr-auto">
       {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
       <Nav.Link href="/" component={Main}>Home</Nav.Link>
-      <Nav.Link href="/results" component={Results}>Seeker</Nav.Link>
+      {/* <Nav.Link href="/results" component={Results}>Seeker</Nav.Link> */}
       <Nav.Link href="/signup" component={Signup}>Log in or Sign up</Nav.Link>
 
     </Nav>
