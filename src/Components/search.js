@@ -3,9 +3,10 @@ import ReactDom from 'react-dom';
 import Modal from './modal';
 import "../../routes/api/sales";
 import "../../routes/api/index"
+import Signup from '../pages/Signup';
 var salesData = require("mongoose");
 
-function search(Modal) {
+function search(Signup) {
 
 var results = ""
 
@@ -45,6 +46,6 @@ var mapOptions = {
   mapTypeId: 'roadmap'
 };
 var map = new google.maps.Map(document.getElementById('map'),
-    mapOptions);
+  mapOptions);
 
 export default search;

@@ -1,7 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Form, Button, ModalBody, Modal } from 'react-bootstrap';
+import { Link } from "react-router-dom"
+
+//axios variable import for api query
+const axios = require('axios').default;
+
 
 function Signup() {
+    //set components initial state
+    // const [signup, setSignup] = useState([])
+    const [formObject, setFormObject] = useState({})
+
+
+    /*
+            GeoLocation Function
+    */
+ 
+
+    
+    //varaibles for the GeoLocation function from the sign up form.
+    let address = formObject.formStreetNumber;
+    let street = formObject.formStreetName;
+    let city = formObject.formCity;
+    let state = formObject.formState;
+
+    function GeoLocation(){
+       //take the address from sign up fields and convert for DB
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}+${street}+${city}+${state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+            .then(function(res) {
+                console.log(res)
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+            .then(function(res) {
+
+            }); 
+        }
+
     return (
         
         <Modal show={true} size="lg">
@@ -47,12 +83,13 @@ function Signup() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button 
+            // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
+                onClick={() => GeoLocation()}
+                variant="primary" type="submit">
                 Submit
             </Button>
+            <Link to="/"> Return Home</Link>
         </Form>
         </ModalBody>
         </Modal>

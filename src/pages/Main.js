@@ -1,11 +1,12 @@
 import React from 'react';
 import './main.css';
-import { Navbar, Nav} from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
+// import Results from './Results';
 import Signup from './Signup';
 
 function Main(){
     return (
-    <Navbar bg="light" expand="lg">
+  <Navbar bg="light" expand="lg">
   <Navbar.Brand href="/landingpage">Garage Sale Finder</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
