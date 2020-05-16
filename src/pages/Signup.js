@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Form, Button, ModalBody, Modal } from 'react-bootstrap';
 
+//axios variable import for api query
+const axios = require('axios').default;
 
 
 function Signup() {
     //set components initial state
-    const [signup, setSignup] = useState([])
+    // const [signup, setSignup] = useState([])
     const [formObject, setFormObject] = useState({})
 
 
@@ -13,8 +15,6 @@ function Signup() {
             GeoLocation Function
     */
    
-    //URL for the geolocation
-    const geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" 
 
     
     //varaibles for the GeoLocation function from the sign up form.
@@ -25,7 +25,7 @@ function Signup() {
 
     function GeoLocation(){
        //take the address from sign up fields and convert for DB
-        axios.get(`${geoUrl}${address}+${street}+${city}+${state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}+${street}+${city}+${state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
             .then(function(res) {
                 console.log(res)
             })
@@ -33,7 +33,7 @@ function Signup() {
                 console.log(err)
             })
             .then(function(res) {
-                    
+
             }); 
         }
 
@@ -81,12 +81,9 @@ function Signup() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
             <Button 
-            disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
-                onClick={() => {GeoLocation}}
+            // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
+                onClick={GeoLocation}
                 variant="primary" type="submit">
                 Submit
             </Button>
