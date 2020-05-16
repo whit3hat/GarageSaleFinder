@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Form, Button, ModalBody, Modal } from 'react-bootstrap';
+import { Link } from "react-router-dom"
 
 //axios variable import for api query
 const axios = require('axios').default;
@@ -87,6 +88,7 @@ function Signup() {
                 variant="primary" type="submit">
                 Submit
             </Button>
+            <Link to="/"> Return Home</Link>
         </Form>
         </ModalBody>
         </Modal>
