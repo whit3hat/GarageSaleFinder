@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
-import { Grid, Cell } from 'react-mdl';
+import { Navbar, Form } from 'react-bootstrap';
 
-class  Landing extends Component {
-    render() { 
-        return ( 
-            <div style={{width: '100%', margin: 'auto'}}>
-                <Grid className='landing-grid'>
-                    <Cell col={12}>
-                        
-                    </Cell>
+function Landing(){
+    return (
+    <Navbar bg="light" expand="lg">
+  <Navbar.Brand href="/landingpage">Garage Sale Finder</Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+      {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
+      <Nav.Link href="/home" component={Main}>Home</Nav.Link>
+      <Nav.Link href="/results" component={Results}>Seeker</Nav.Link>
+      <Nav.Link href="/signup" component={Signup}>Log in or Sign up</Nav.Link>
 
-                </Grid>
-            </div>
-         );
-    }
-}
- 
+    </Nav>
+    <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-success">Search</Button>
+    </Form>
+  </Navbar.Collapse>
+</Navbar>  
+    )        
+};
+
 export default Landing;

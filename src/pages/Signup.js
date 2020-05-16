@@ -3,6 +3,7 @@ import { Form, Button, ModalBody, Modal } from 'react-bootstrap';
 
 function Signup() {
     return (
+        
         <Modal show={true} size="lg">
             <ModalBody>
         <Form>
