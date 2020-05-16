@@ -9,8 +9,7 @@ function App() {
     return (
       <Router>
         <div>
-        <Main />
-        <Signup />
+    
 
           <Route exact path = '/' component={Main} />
           <Route exact path = '/signup' component={Signup} />
