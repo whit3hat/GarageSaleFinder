@@ -22,7 +22,7 @@ function Signup() {
                 <Form.Control type='text' placeholder='Main St' />
             </Form.Group>
             <Form.Group controlId='formCity'>
-                <Form.label>City</Form.label>
+                <Form.Label>City</Form.Label>
                 <Form.Control type='text' placeholder='Anytown' />
             </Form.Group>
             <Form.Group controlId='formState'>
