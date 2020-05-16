@@ -2,7 +2,7 @@ import React from 'react';
 import './main.css';
 import { Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 import Results from './Results';
-import SignUp from './Signup';
+import Signup from './Signup';
 
 function Main(){
     return (
@@ -14,7 +14,7 @@ function Main(){
       {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
       <Nav.Link href="/home" component={Main}>Home</Nav.Link>
       <Nav.Link href="/results" component={Results}>Seeker</Nav.Link>
-      <Nav.Link href="/Signup" component={SignUp}>Log in or Sign up</Nav.Link>
+      <Nav.Link href="/signup" component={Signup}>Log in or Sign up</Nav.Link>
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
