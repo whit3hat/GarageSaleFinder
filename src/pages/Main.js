@@ -12,7 +12,6 @@ function Main(){
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
-      <Nav.Link href="../Components/home.js" component={Main}>Home</Nav.Link>
       <Nav.Link href="/signup" component={Signup}>Log in or Sign up</Nav.Link>
 
     </Nav>
