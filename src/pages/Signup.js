@@ -39,6 +39,7 @@ function Signup() {
         }
 
     return (
+        
         <Modal show={true} size="lg">
             <ModalBody>
         <Form>
