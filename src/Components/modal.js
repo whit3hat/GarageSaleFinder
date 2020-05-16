@@ -13,11 +13,11 @@ function Modal() {
         Sign up or Log in here
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={true} size="lg" onHide={handleClose} style={{top:'calc(50% - 170px)'}}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='modal-content'>
         <Form>
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
