@@ -1,7 +1,42 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
+
+
 function Signup() {
+    //set components initial state
+    const [signup, setSignup] = useState([])
+    const [formObject, setFormObject] = useState({})
+
+
+    /*
+            GeoLocation Function
+    */
+   
+    //URL for the geolocation
+    const geoUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" 
+
+    
+    //varaibles for the GeoLocation function from the sign up form.
+    let address = formObject.formStreetNumber;
+    let street = formObject.formStreetName;
+    let city = formObject.formCity;
+    let state = formObject.formState;
+
+    function GeoLocation(){
+       //take the address from sign up fields and convert for DB
+        axios.get(`${geoUrl}${address}+${street}+${city}+${state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+            .then(function(res) {
+                console.log(res)
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+            .then(function(res) {
+                    
+            }); 
+        }
+
     return (
         <Form>
             <Form.Group controlId='formFirstName'>
@@ -47,7 +82,10 @@ function Signup() {
             <Form.Group controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button 
+            disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
+                onClick={() => {GeoLocation}}
+                variant="primary" type="submit">
                 Submit
             </Button>
         </Form>
