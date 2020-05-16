@@ -40,7 +40,7 @@ window.results = function(results) {
 // Map Type
 var myLatlng = new google.maps.LatLng();
 var mapOptions = {
-  zoom: 8,
+  zoom: 15,
   center: myLatlng,
   mapTypeId: 'roadmap'
 };

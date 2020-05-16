@@ -14,7 +14,7 @@ function Main(){
       {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
       <Nav.Link href="/home" component={Main}>Home</Nav.Link>
       <Nav.Link href="/results" component={Results}>Seeker</Nav.Link>
-      <Nav.Link href="/Signup" component={SignUp}>Log in or Sign up</Nav.Link>
+      <Nav.Link href="/Signup" component={SignUp}>Log in/Sign up</Nav.Link>
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
