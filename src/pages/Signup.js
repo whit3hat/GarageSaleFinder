@@ -14,7 +14,7 @@ function Signup() {
     /*
             GeoLocation Function
     */
-   
+ 
 
     
     //varaibles for the GeoLocation function from the sign up form.
@@ -83,7 +83,7 @@ function Signup() {
             </Form.Group>
             <Button 
             // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
-                onClick={GeoLocation}
+                onClick={() => GeoLocation()}
                 variant="primary" type="submit">
                 Submit
             </Button>
