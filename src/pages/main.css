@@ -7,10 +7,19 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+    font-family: 'Crafty Girls', cursive;
   }
 
 
   .search-box {
     width: 25px;
-  padding: 250px 10px;
+  padding: 320px 10px;
+  }
+  Button {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  Button:hover {
+    color: #071a58;
   }

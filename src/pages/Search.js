@@ -1,6 +1,6 @@
 import React from 'react';
 import './main.css';
-import { InputGroup, FormControl, Container, Col, Row } from 'react-bootstrap';
+import { InputGroup, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
 
 
 function Searching(){
@@ -11,7 +11,7 @@ function Searching(){
 <InputGroup size="lg" className="search-box">
     <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" />
     <InputGroup.Prepend>
-      <InputGroup.Text id="inputGroup-sizing-lg">Search</InputGroup.Text>
+      <Button style={{background:'#00CED1	'}} id="inputGroup-sizing-lg">Search</Button>
     </InputGroup.Prepend>
   </InputGroup>
   </Col>
