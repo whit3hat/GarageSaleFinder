@@ -1,5 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+//axios variable import for api query
+const axios = require('axios').default;
 
 
 
@@ -33,7 +35,7 @@ function Signup() {
                 console.log(err)
             })
             .then(function(res) {
-                    
+
             }); 
         }
 
