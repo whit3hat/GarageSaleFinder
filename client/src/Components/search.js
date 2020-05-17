@@ -46,6 +46,6 @@ var mapOptions = {
   mapTypeId: 'roadmap'
 };
 var map = new google.maps.Map(document.getElementById('map'),
-    mapOptions);
+  mapOptions);
 
 export default search;
