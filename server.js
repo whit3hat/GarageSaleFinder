@@ -1,11 +1,11 @@
 const express = require("express");
 var fs = require("fs");
-const multer = require('multer');
+// const multer = require('multer');
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 var Schema = mongoose.Schema;
-const User = require("./userModel.js");
+// const User = require("./models/userModel.js");
 const routes = require('./routes');
 const app = express();
 
