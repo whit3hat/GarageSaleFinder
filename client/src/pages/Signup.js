@@ -19,7 +19,7 @@ function Signup() {
     function handleFormSubmit(e) {
         e.preventDefault();
         if(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail) {
-            API.save({
+            API.saveUser({
                 firstName: formObject.formFirstName,
                 lastName: formObject.formLastName,
                 email: formObject.formBasicEmail,
@@ -29,7 +29,7 @@ function Signup() {
                 state: formObject.formState
 
             })
-            .then(res)
+            .then(res => geoLocation())
             .catch(err => console.log(err));
         }
     };
@@ -44,9 +44,7 @@ function Signup() {
     let city = formObject.formCity;
     let state = formObject.formState;
 
-    function geoLocation(e){
-
-        e.preventDefault();
+    function geoLocation(){
         console.log("hi")
         console.log(address);
     //    take the address from sign up fields and convert for DB
@@ -108,7 +106,7 @@ function Signup() {
             </Form.Group>
             <Button 
             // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
-                onClick={geoLocation}
+                onClick={handleFormSubmit}
                 variant="primary" type="submit">
                 Submit
             </Button>
