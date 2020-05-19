@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-var bcrypt = require("bcrypt");
-const dbName = sales.db;
+// var bcrypt = require("bcrypt");
+// const dbName = sales.db;
 
 const searchSchema = mongoose.searchSchema({
     _id: mongoose.Schema.Types.ObjectId,

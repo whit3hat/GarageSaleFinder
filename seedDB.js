@@ -1,38 +1,42 @@
 const mongoose = require('mongoose');
-const db = require('../models');
+const db = require('./models');
 
 //connection to the DB
 mongoose.connect(
     process.env.MONGODB_URI ||
-    'mongodb://localhost/garagesale'
+    'mongodb://localhost/sales'
 );
 
 
-const posterSeed = [
+const salesSeed = [
     {
         date: " ",
         location: " ",
-        keyword: " "
+        keyword: " ",
+        description: " "
     },
     {
         date: " ",
         location: " ",
-        keyword: " "
+        keyword: " ",
+        description: " "
     },
     {
         date: " ",
         location: " ",
-        keyword: " "
+        keyword: " ",
+        description: " "
     },
 ];
 
-db.Post
-    .remove({})
-    .then(() => db.Post.collection.insertMany(posterSeed))
+db.Sales
+    // .remove({})
+    .then(() => db.Sales.collection.insertMany(salesSeed))
     .then(data => {
         console.log(data.result.n + ' records inserted!');
         process.exit(0);
     })
     .catch(err => {
+        console.log(err)
         process.exit(1);
     });
