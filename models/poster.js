@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-var bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
 // const ItemSchema = Sales.db;
 
@@ -10,11 +9,8 @@ const postSchema = new Schema({
         type: Array,
       },
       location: {
-
-        type: { type: String },
-        coordinates: []
-       },
-
+        type: {type: String},
+      coordinates:[]
       },
       keyword: {
         type: Array
@@ -24,9 +20,9 @@ const postSchema = new Schema({
       }
     });
 
-const Post = mongoose.model('Sales',postSchema);
+const sales = mongoose.model('Sales',postSchema);
 // const Search = mongoose.model("Sales", searchSchema);
 
 // const Search = mongoose.model("Search", searchSchema);
 
-module.exports = Post;
+module.exports = sales;

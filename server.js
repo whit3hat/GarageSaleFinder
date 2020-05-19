@@ -4,7 +4,8 @@ const multer = require('multer');
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-var Schema = mongoose.Schema;
+// var Schema = mongoose.Schema;
+var db = require('./scripts/seed');
 const User = require("./models/userModel.js");
 const routes = require('./routes');
 const app = express();
@@ -23,17 +24,16 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Add routes, both API and view
-// app.use(routes); commented out for now
+app.use(routes); 
 
-//Disabled for now, not sure if its needed
-// app.use(logger("dev"));
+app.use(logger("dev"));
 
 app.use(express.static("public"));
 
 //Connects to the Mongo DB  
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/garagesale"); //Will need to update once the DB is completed
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sales"); //Will need to update once the DB is completed
 const MongoClient = require('mongodb').MongoClient
-const myurl = 'mongodb://localhost/garagesale';
+const myurl = 'mongodb://localhost/sales';
  
 MongoClient.connect(myurl, (err, client) => {
   if (err) return console.log(err)
