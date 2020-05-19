@@ -10,8 +10,11 @@ const postSchema = new Schema({
         type: Array,
       },
       location: {
-        type: {type: String},
-      coordinates:[]
+
+        type: { type: String },
+        coordinates: []
+       },
+
       },
       keyword: {
         type: Array
