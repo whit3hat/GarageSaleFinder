@@ -19,6 +19,6 @@ const postSchema = new Schema({
       }
     });
 
-const sales = mongoose.model('Sales',postSchema);
+const Sale = mongoose.model('Sale',postSchema);
 
-module.exports = sales;
+module.exports = Sale;

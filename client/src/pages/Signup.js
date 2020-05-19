@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Form, Button, ModalBody, Modal } from 'react-bootstrap';
+import API from '../utils/API';
 function Signup() {
 
     //axios variable import for api query
@@ -7,6 +8,31 @@ function Signup() {
     //set components initial state
     // const [signup, setSignup] = useState([])
     const [formObject, setFormObject] = useState({})
+
+    //Handles updating component state when the user types into the input fields
+    function handleInputChange(e) {
+        const { name, value } = e.target;
+        setFormObject({...formObject, [name]: value})
+    };
+
+    //when the form is submitted, use the geoLocation function and then save the info to the DB
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        if(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail) {
+            API.save({
+                firstName: formObject.formFirstName,
+                lastName: formObject.formLastName,
+                email: formObject.formBasicEmail,
+                address: formObject.formStreetNumber,
+                street: formObject.formStreetName,
+                city: formObject.formCity,
+                state: formObject.formState
+
+            })
+            .then(res)
+            .catch(err => console.log(err));
+        }
+    };
 
     /*
             GeoLocation Function

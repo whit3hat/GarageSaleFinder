@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Main from './pages/Main';
 import Signup from './pages/Signup';
+import Search from './pages/Search';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
           <Route exact path = '/' component={Main} />
           <Route exact path = '/signup' component={Signup} />
+          <Route exact path = '/search' component={Search} />
           
         </div>
 

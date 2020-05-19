@@ -26,7 +26,7 @@ const posterSeed = [
     },
 ];
 
-db.sales
+db.Sale
     .remove({})
     .then(() => db.sales.collection.insertMany(posterSeed))
     .then(data => {
