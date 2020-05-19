@@ -1,13 +1,14 @@
 const express = require("express");
-var fs = require(‘fs’);
+var fs = require("fs");
 const multer = require('multer');
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 var Schema = mongoose.Schema;
-const User = require("./userModel.js");
+const User = require("./models/userModel.js");
 const routes = require('./routes');
 const app = express();
+const GridFsStorage = require("multer-gridfs-storage");
 
 const PORT = process.env.PORT || 3000;
 
@@ -22,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes); commented out for now
 
 //Disabled for now, not sure if its needed
 // app.use(logger("dev"));
@@ -37,10 +38,29 @@ const myurl = 'mongodb://localhost/garagesale';
 MongoClient.connect(myurl, (err, client) => {
   if (err) return console.log(err)
   db = client.db('test') 
-  app.listen(3000, () => {
-    console.log('listening on 3000')
   })
+
+// Create storage engine
+const storage = new GridFsStorage({
+  url: myurl,
+  file: (req, file) => {
+    return new Promise((resolve, reject) => {
+      crypto.randomBytes(16, (err, buf) => {
+        if (err) {
+          return reject(err)
+        }
+        const filename = file.originalname
+        const fileInfo = {
+          filename: filename,
+          bucketName: 'uploads',
+        }
+        resolve(fileInfo)
+      })
+    })
+  },
 })
+
+const upload = multer({ storage })
 
 // Allows for multiple file uploads
 app.post('/uploadmultiple', upload.array('myFiles', 12), (req, res, next) => {
@@ -85,7 +105,13 @@ app.get('/photos', (req, res) => {
     })
   });
 
+app.post('/api/upload', upload.single('img'), (req, res, err) => {
+  if (err) throw err
+  res.status(201).send()
+})
+
 //Start the API server
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
+

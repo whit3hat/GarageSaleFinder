@@ -169,12 +169,12 @@ const posterSeed = [
         keyword: "kitchen wares, lunch box, glassware"
     },
     {
-        date: "06/11/20,06/12/20,06/13/20 ",
+        date: "06/04/20,06/05/20,06/06/20",
         location: "3940 Cypress Dr, Kansas City, MO 64111",
         keyword: "antiques"
     },
     {
-        date: "06/11/20,06/12/20,06/13/20 ",
+        date: "06/11/20,06/12/20,06/13/20",
         location: "10500 Lackman Rd, Lenexa, KS 66215",
         keyword: "mattress, bicycle"
     },
