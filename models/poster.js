@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-// const ItemSchema = Sales.db;
 
 
 const postSchema = new Schema({
@@ -21,8 +20,5 @@ const postSchema = new Schema({
     });
 
 const sales = mongoose.model('Sales',postSchema);
-// const Search = mongoose.model("Sales", searchSchema);
-
-// const Search = mongoose.model("Search", searchSchema);
 
 module.exports = sales;

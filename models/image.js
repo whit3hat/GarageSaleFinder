@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-
-var Item = new ItemSchema(
+var imgSchema = new Schema(
     { img: 
         { data: Buffer, contentType: String }
     }
   );
-  var Img = mongoose.model('Image',postSchema);
+  var Img = mongoose.model('Image', imgSchema);
 
   module.exports = Img;
