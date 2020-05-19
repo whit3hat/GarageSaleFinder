@@ -16,8 +16,9 @@ const postSchema = mongoose.postSchema({
         type: Array,
       },
       location: {
-        type: "Point",
-      coordinates:[]
+        type: { type: String },
+        coordinates: []
+       },
       },
       keyword: {
         type: Array
