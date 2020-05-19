@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 var bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
-const ItemSchema = sales.db;
+const ItemSchema = Sales.db;
 
 var Sales = new ItemSchema(
   { img: 
