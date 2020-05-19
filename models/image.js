@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-// var bcrypt = require("bcrypt");
-// const dbName = sales.db;
+
 
 var Item = new ItemSchema(
     { img: 
