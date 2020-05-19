@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-
-const searchSchema = mongoose.searchSchema({
+const searchSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
         date: {
         type: Array,
       },
       location: {
-        type: "Point",
+        type: {type: String},
       coordinates:[]
       },
       keyword: {
@@ -21,3 +21,4 @@ const searchSchema = mongoose.searchSchema({
   const Search = mongoose.model("Search", searchSchema);
 
   module.exports = Search;
+  
