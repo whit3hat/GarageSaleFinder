@@ -11,9 +11,9 @@
   }
 
 
-  .search-box {
+  .form-control .search-box {
     width: 25px;
-  padding: 320px 10px;
+    /* padding: 320px 10px !important; */
   }
   Button {
     position: relative;
@@ -22,4 +22,7 @@
   }
   Button:hover {
     color: #071a58;
+  }
+  .mt-5 {
+    padding-top: 200px;
   }
