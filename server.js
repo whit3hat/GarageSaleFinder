@@ -5,7 +5,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 // var Schema = mongoose.Schema;
-var db = require('./scripts/seed');
+var db = require('./models');
 const User = require("./models/userModel.js");
 const routes = require('./routes');
 const app = express();
@@ -31,7 +31,7 @@ app.use(logger("dev"));
 app.use(express.static("public"));
 
 //Connects to the Mongo DB  
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sales"); //Will need to update once the DB is completed
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sales"); 
 const MongoClient = require('mongodb').MongoClient
 const myurl = 'mongodb://localhost/sales';
  
@@ -110,7 +110,7 @@ app.post('/api/upload', upload.single('img'), (req, res, err) => {
   res.status(201).send()
 })
 
-//Start the API server
+//Start the API
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
