@@ -5,23 +5,17 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  username: {
-    type: String,
-    trim: true,
-    required: "Username is Required"
-  },
-
-  password: {
-    type: String,
-    trim: true,
-    required: "Password is Required",
-    validate: [({ length }) => length >= 8, "Password should be longer."]
-  },
-
   email: {
     type: String,
     unique: true,
+    required: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  },
+  password: {
+    type: String,
+    trim: true,
+    required: true,
+    validate: [({ length }) => length >= 8, "Password should be longer."]
   },
 
   post: Array,
@@ -35,32 +29,32 @@ const UserSchema = new Schema({
 });
 
 UserSchema.statics.authenticate = function (email, password, callback) {
-  User.findOne({ email: email})
-  .exec(function(err, user) {
-    if(err) {
-      return callback(err)
-    } else if (!user) {
-      var err = new Error("User not found.");
-      err.status = 401;
-      return callback(err);
-    }
-    bcrypt.compare(password, UserSchema.password, function(err, result) {
-      if(result === true) {
-        return callback(null, user);
-      } else {
-        return callback();
+  User.findOne({ email: email })
+    .exec(function (err, user) {
+      if (err) {
+        return callback(err)
+      } else if (!user) {
+        var err = new Error("User not found.");
+        err.status = 401;
+        return callback(err);
       }
-    })
-  });
+      bcrypt.compare(password, UserSchema.password, function (err, result) {
+        if (result === true) {
+          return callback(null, user);
+        } else {
+          return callback();
+        }
+      })
+    });
 }
 
-UserSchema.pre("save", function(next) {
+UserSchema.pre("save", function (next) {
   var user = this;
-  bcrypt.hash(user.password, 10, function(err, hash) {
-    if(err) {
+  bcrypt.hash(user.password, 10, function (err, hash) {
+    if (err) {
       return next(err);
     }
-    user.password=hash;
+    username.password = hash;
     next();
   })
 })
