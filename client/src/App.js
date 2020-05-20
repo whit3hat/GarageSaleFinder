@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import Signup from './pages/Signup';
+import Search from './pages/Search';
 
 
 function App() {

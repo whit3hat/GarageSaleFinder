@@ -1,34 +1,34 @@
 const db = require('../models');
 
-//Defining methods for the SalesController
+//Defining methods for the SaleController
 module.exports ={
     findAll: function(req, res) {
-        db.Sales
+        db.Sale
             .find(req.query)
             .sort({ date : -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     findById: function(req, res) {
-        db.Sales
+        db.Sale
             .findById(req.params.id)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-        db.Sales
+        db.Sale
             .create(req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     update: function(req, res){
-        db.Sales
+        db.Sale
             .findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     remove: function(req, res) {
-        db.Sales
+        db.Sale
             .findById({ _id: req.params.id })
             .then(dbModel => dbModel.remove())
             .then(dbModel => res.json(dbModel))
