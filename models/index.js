@@ -1,5 +1,5 @@
 module.exports = {
 Sale : require ("./poster") , 
-User : ("./userModel") , 
-Search : ("./search.js"), 
-Img : ("./image.js")};
+User : require ("./userModel") , 
+Search : require ("./search.js"), 
+Img : require ("./image.js")};
