@@ -26,14 +26,14 @@ const posterSeed = [
     },
 ];
 
-db.Sale
-    .remove({})
-    .then(() => db.sales.collection.insertMany(posterSeed))
-    .then(data => {
-        console.log(data.result.n + ' records inserted!');
-        process.exit(0);
-    })
-    .catch(err => {
-      console.log(err);
-        process.exit(1);
-    });
+// db.Sale
+//     .remove({})
+//     .then(() => db.Sale.collection.insertMany(posterSeed))
+//     .then(data => {
+//         console.log(data.result.n + ' records inserted!');
+//         process.exit(0);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//         process.exit(1);
+//     });
