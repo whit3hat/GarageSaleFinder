@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import Signup from './pages/Signup';
 import Search from './pages/Search';
+var bodyParser = require("body-parser")
+
 
 
 function App() {
