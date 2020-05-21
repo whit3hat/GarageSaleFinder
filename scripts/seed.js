@@ -4,7 +4,7 @@ const db = require('../models');
 //connection to the DB
 mongoose.connect(
     process.env.MONGODB_URI ||
-    'mongodb://localhost/garagesale'
+    'mongodb://localhost/sales'
 );
 
 

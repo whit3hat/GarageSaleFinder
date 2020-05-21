@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 function Signup() {
 
-function Signup() {
+
     
     //set components initial state
     // const [signup, setSignup] = useState([])
@@ -14,13 +14,20 @@ function Signup() {
 
     //Handles updating component state when the user types into the input fields
     function handleInputChange(e) {
+        
         const { name, value } = e.target;
-        setFormObject({...formObject, [name]: value})
+        console.log(name, value);
+
+        formObject[name] = value;
+        setFormObject(formObject)
+        console.log(formObject);
+
     };
 
     //when the form is submitted, use the geoLocation function and then save the info to the DB
     function handleFormSubmit(e) {
         e.preventDefault();
+        console.log(formObject);
         // if(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail) {
             API.saveUser({
                 firstName: formObject.formFirstName,
@@ -70,41 +77,49 @@ function Signup() {
             <Form.Group controlId='formFirstName'>
                 <Form.Label>First Name</Form.Label>
                 <Form.Control
+                name='formFirstName'
                 onChange={handleInputChange} type='text' placeholder='Bobby' />
             </Form.Group>
             <Form.Group controlId='formLastName'>
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control 
+                name='formLastName'
                 onChange={handleInputChange} type='text' placeholder='Teenager' />
             </Form.Group>
             <Form.Group controlId='formStreetNumber'>
                 <Form.Label>House Number</Form.Label>
                 <Form.Control 
+                name='formStreetNumber'
                 onChange={handleInputChange} type='text' placeholder='123' />
             </Form.Group>
             <Form.Group controlId='formStreetName'>
                 <Form.Label>Street Name</Form.Label>
                 <Form.Control 
+                name='formStreetName'
                 onChange={handleInputChange} type='text' placeholder='Main St' />
             </Form.Group>
              <Form.Group controlId='formCity'>
                 <Form.Label>City</Form.Label>
                 <Form.Control 
+                name='formCity'
                 onChange={handleInputChange} type='text' placeholder='City' />
             </Form.Group>
             <Form.Group controlId='formState'>
                 <Form.Label>State</Form.Label>
                 <Form.Control 
+                name='formState'
                 onChange={handleInputChange} type='text' placeholder='State' />
             </Form.Group>
             <Form.Group controlId='formZip'>
                 <Form.Label>Zip</Form.Label>
                 <Form.Control 
+                name='formZip'
                 onChange={handleInputChange} type='text' placeholder='01234' />
             </Form.Group> 
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control 
+                name='formBasicEmail'
                 onChange={handleInputChange} type="email" placeholder="Enter email" />
                 <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
