@@ -29,7 +29,7 @@ function Signup() {
     //when the form is submitted, use the geoLocation function and then save the info to the DB
     function handleFormSubmit(e) {
         e.preventDefault();
-        console.log(formObject);
+        // console.log(formObject);
         // if(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail) {
             API.saveUser({
 
@@ -48,7 +48,8 @@ function Signup() {
                 
 
             })
-            .then(res => geoLocation())
+            .then(res => geoLocation(formObject)
+                )
             .catch(err => console.log(err));
         // }
     };
@@ -56,27 +57,20 @@ function Signup() {
     /*
             GeoLocation Function
     */
- 
-    // //varaibles for the GeoLocation function from the sign up form.
-    let address = formObject.formStreetNumber;
-    // let street = formObject.formStreetName;
-    // let city = formObject.formCity;
-    // let state = formObject.formState;
-
-    function geoLocation(){
+   function geoLocation(){
         console.log("hi")
-        console.log(address);
+        console.log(formObject);
     //    take the address from sign up fields and convert for DB
-        // axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}+${street}+${city}+${state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
-        //     .then(function(res) {
-        //         console.log(res)
-        //     })
-        //     .catch(function (err) {
-        //         console.log(err)
-        //     })
-        //     .then(function(res) {
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${formObject.formStreetNumber}+${formObject.formStreetName}+${formObject.formCity}+${formObject.formState}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+            .then(function(res) {
+                console.log(res)
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+            .then(function(res) {
 
-        //     }); 
+            }); 
     }
 
     return (
