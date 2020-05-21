@@ -30,13 +30,18 @@ function Signup() {
         console.log(formObject);
         // if(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail) {
             API.saveUser({
-                firstName: formObject.formFirstName,
-                lastName: formObject.formLastName,
-                email: formObject.formBasicEmail,
+                
+                location: [{
                 address: formObject.formStreetNumber,
                 street: formObject.formStreetName,
                 city: formObject.formCity,
-                state: formObject.formState
+                state: formObject.formState}
+                ],
+
+                keyword: formObject.formKeyWords,
+
+                description: formObject.formDescription
+                
 
             })
             .then(res => geoLocation())
@@ -116,7 +121,21 @@ function Signup() {
                 name='formZip'
                 onChange={handleInputChange} type='text' placeholder='01234' />
             </Form.Group> 
-            <Form.Group controlId="formBasicEmail">
+
+            <Form.Group controlId='formDescription'>
+                <Form.Label>Description</Form.Label>
+                <Form.Control 
+                name='formDescription'
+                onChange={handleInputChange} as='textarea' rows='3' placeholder='Description' />
+            </Form.Group>
+            <Form.Group controlId='formKeyWords'>
+                <Form.Label>Keywords</Form.Label>
+                <Form.Control 
+                name='formKeyWords'
+                onChange={handleInputChange} type='text' placeholder='Search Keywords' />
+            </Form.Group>
+
+            {/* <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control 
                 name='formBasicEmail'
@@ -129,7 +148,7 @@ function Signup() {
             <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
+            </Form.Group> */}
             <Button 
             // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
                 onClick={handleFormSubmit}
