@@ -3,19 +3,17 @@ const Schema = mongoose.Schema;
 
 
 const postSchema = new Schema({
-    _id: mongoose.Schema.Types.ObjectId,
         date: {
         type: Array,
       },
       location: {
-        type: {type: String},
-      coordinates:[]
+        type: Array,
       },
       keyword: {
         type: Array
       },
       description: {
-          type: String
+          type: Array
       }
     });
 
