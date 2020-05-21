@@ -135,7 +135,7 @@ function Signup() {
                 onChange={handleInputChange} type='text' placeholder='Search Keywords' />
             </Form.Group>
 
-            <Form.Group controlId="formBasicEmail">
+            {/* <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control 
                 name='formBasicEmail'
@@ -148,7 +148,7 @@ function Signup() {
             <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
+            </Form.Group> */}
             <Button 
             // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
                 onClick={handleFormSubmit}
