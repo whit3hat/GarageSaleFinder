@@ -72,7 +72,7 @@ router.get('/profile', function (req, res, next) {
         });
 });
 
-// GET for logout logout
+// GET for logout
 router.get('/logout', function (req, res, next) {
     if (req.session) {
         // delete session object
