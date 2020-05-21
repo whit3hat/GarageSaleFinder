@@ -4,8 +4,10 @@ import API from '../utils/API';
 import axios from 'axios';
 import { Link } from "react-router-dom"
 
-function Signup() {
 
+
+function Signup() {
+    
 
     
     //set components initial state
@@ -30,17 +32,19 @@ function Signup() {
         console.log(formObject);
         // if(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail) {
             API.saveUser({
-                
+
                 location: [{
-                address: formObject.formStreetNumber,
-                street: formObject.formStreetName,
-                city: formObject.formCity,
-                state: formObject.formState}
+                address: formObject.formStreetNumber},
+                {street: formObject.formStreetName},
+                {city: formObject.formCity},
+                {state: formObject.formState}
                 ],
 
-                keyword: formObject.formKeyWords,
+                keyword: [{
+                    keyword: formObject.formKeyWords}],
 
-                description: formObject.formDescription
+                description: [{
+                    description: formObject.formDescription}]
                 
 
             })
