@@ -1,4 +1,5 @@
 import React from 'react';
+// import './main.css';
 import { InputGroup, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
 
 
@@ -19,6 +20,8 @@ function Searching() {
       </Container>
     </div>
   )
+
+
 };
 
 export default Searching;

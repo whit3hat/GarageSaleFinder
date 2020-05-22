@@ -13,10 +13,13 @@ function Main() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
+            {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
             <Nav.Link href="/signup" component={Signup}>Create Post</Nav.Link>
+
           </Nav>
         </Navbar.Collapse>
-      </Navbar>   
+      </Navbar>
+           
       <Search />
     </div>
   )

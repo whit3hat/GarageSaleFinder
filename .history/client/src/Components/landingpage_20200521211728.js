@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import './main.css';
-import { Navbar, Nav} from 'react-bootstrap';
-import Signup from '../pages/Signup';
-import Main from '../pages/Main';
+import { Navbar, Form } from 'react-bootstrap';
 
-function Home(){
+function Landing(){
     return (
     <Navbar bg="light" expand="lg">
   <Navbar.Brand href="/landingpage">Garage Sale Finder</Navbar.Brand>
@@ -13,16 +10,17 @@ function Home(){
     <Nav className="mr-auto">
       {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
       <Nav.Link href="/home" component={Main}>Home</Nav.Link>
-      <Nav.Link href="../pages" component={Signup}>Create Post</Nav.Link>
+      {/* <Nav.Link href="/results" component={Results}>Seeker</Nav.Link> */}
+      <Nav.Link href="/signup" component={Signup}>Create Post</Nav.Link>
 
     </Nav>
-    {/* <Form inline>
+    <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
       <Button variant="outline-success">Search</Button>
-    </Form> */}
+    </Form>
   </Navbar.Collapse>
 </Navbar>  
     )        
 };
 
-export default Home;
+export default Landing;

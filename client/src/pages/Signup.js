@@ -55,7 +55,7 @@ function Signup() {
     };
 
     /*
-            GeoLocation Function
+        GeoLocation Function
     */
    function geoLocation(){
         console.log("hi")

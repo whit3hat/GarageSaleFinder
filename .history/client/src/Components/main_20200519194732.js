@@ -14,6 +14,7 @@ const Main = () => (
     <Route exact path= "/" component={LandingPage} />
     <Route path= "/home" component={Home} />
     <Route path= "/upload" component={FileUpload} />
+    {/* <Route path= "/contact" component={Contact} /> */}
 
 </Switch>
 )

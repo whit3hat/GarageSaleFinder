@@ -19,6 +19,8 @@ function Searching() {
       </Container>
     </div>
   )
+
+
 };
 
 export default Searching;

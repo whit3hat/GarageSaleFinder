@@ -16,7 +16,8 @@ function Main() {
             <Nav.Link href="/signup" component={Signup}>Create Post</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>   
+      </Navbar>
+           
       <Search />
     </div>
   )
