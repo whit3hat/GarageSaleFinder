@@ -32,6 +32,11 @@ function Signup() {
         // console.log(formObject);
         // if(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail) {
             API.saveUser({
+                
+                date: [
+                    {startDate: formObject.formDateStart},
+                    {endDate: formObject.formDateEnd}
+                ],
 
                 location: [{
                 address: formObject.formStreetNumber},
@@ -118,7 +123,21 @@ function Signup() {
                 <Form.Control 
                 name='formZip'
                 onChange={handleInputChange} type='text' placeholder='01234' />
-            </Form.Group> 
+            </Form.Group>
+
+            <Form.Group controlId='formDateStart'>
+                <Form.Label>Start Date</Form.Label>
+                <Form.Control
+                name='formDateStart'
+                onChange={handleInputChange} type='text' placeholder='06/30/2020' />
+            </Form.Group>
+
+            <Form.Group controlId='formDateEnd'>
+                <Form.Label>End Date</Form.Label>
+                <Form.Control
+                name='formDateEnd'
+                onChange={handleInputChange} type='text' placeholder='07/01/2020' />
+            </Form.Group>
 
             <Form.Group controlId='formDescription'>
                 <Form.Label>Description</Form.Label>
@@ -149,6 +168,7 @@ function Signup() {
             </Form.Group> */}
             <Button 
             // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
+                
                 onClick={handleFormSubmit}
                 variant="primary" type="submit">
                 Submit
