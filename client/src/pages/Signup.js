@@ -7,8 +7,11 @@ import { Link } from "react-router-dom"
 
 
 function Signup() {
-    
+        //modal information to show and hide when submitting the form
+      const [show, setShow] = useState(false);
 
+       const handleClose = () => setShow(false);
+       const handleShow = () => setShow(true);
     
     //set components initial state
     // const [signup, setSignup] = useState([])
@@ -29,7 +32,7 @@ function Signup() {
     //when the form is submitted, use the geoLocation function and then save the info to the DB
     function handleFormSubmit(e) {
         e.preventDefault();
-        // console.log(formObject);
+        console.log(formObject);
         // if(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail) {
             API.saveUser({
                 
@@ -53,12 +56,14 @@ function Signup() {
                 
 
             })
-            .then(res => { }
+            .then(res => {handleClose()}
                 )
             .catch(err => console.log(err));
         // }
     };
 
+
+    
     /*
             GeoLocation Function
     */
