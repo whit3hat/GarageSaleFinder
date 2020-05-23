@@ -5,6 +5,11 @@ import CurrentLocation from './CurrentLocation';
 import axios from 'axios';
 import API from '../../utils/API';
 
+const mapStyles = {
+  width: '75%',
+  height: '75%',
+};
+
 // function geoLocation() {
 //   console.log('geoLocation function')
 
@@ -51,6 +56,7 @@ onMarkerClick = (props, marker, e) =>
   render() {
     return (
       <Map
+      style={mapStyles}
       centerAroundCurrentLocation
       google={this.props.google}
       >
