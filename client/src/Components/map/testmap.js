@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-import { FormControl } from 'react-bootstrap';
+import CurrentLocation from './CurrentLocation';
+// import { FormControl } from 'react-bootstrap';
 import axios from 'axios';
-
-const mapStyles = {
-  width: '75%',
-  height: '75%',
-};
+import API from '../../utils/API';
 
 // function geoLocation() {
-//   console.log("hi")
-//   console.log(formObject);
+//   console.log('geoLocation function')
+
+//   //API call to get all sales from the DB
+//   API.getUser(console.log('getUser API call'))
 //   //    take the address from sign up fields and convert for DB
 //   axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${formObject.formStreetNumber}+${formObject.formStreetName}+${formObject.formCity}+${formObject.formState}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
 //     .then(function (res) {
@@ -25,17 +24,49 @@ const mapStyles = {
 // }
 
 export class MapContainer extends Component {
+  state = {
+    showingInfoWindow: false,
+    activeMarker: {},
+    selectedPlace: {},
+  };
+
+onMarkerClick = (props, marker, e) =>
+  this.setState( {
+    selectedPlace: props,
+    activeMarker: marker,
+    showingInfoWindow: true
+  });
+
+  onClose = (props) => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  };
+
+  
 
   render() {
     return (
-      <div style={{height: '100%', width: '100%'}}>
-        <Map
-          google={this.props.google}
-          zoom={15}
-          style={mapStyles}
-          initialCenter={{ lat: -1.2884, lng: 36.8233 }}
-        />
-      </div>
+      <Map
+      centerAroundCurrentLocation
+      google={this.props.google}
+      >
+     <Marker onClick={this.onMarkerClick} name={'Current location'} />
+
+      <InfoWindow
+        marker={this.state.activeMarker}
+        visible={this.state.showingInfoWindow}
+        onClose={this.onClose}>
+
+        <div>
+          <h4>{this.state.selectedPlace.name}</h4>
+        </div> 
+
+        </InfoWindow>
+        </Map>
     );
   }
 }
