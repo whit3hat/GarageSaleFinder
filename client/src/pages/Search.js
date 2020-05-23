@@ -8,10 +8,10 @@ function Searching() {
       <Container>
         <Row>
           <Col>
-            <InputGroup size="lg" className="search-box mt-5">
+            <InputGroup size="lg" className="search-box mt-3">
               <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Address" />
               <InputGroup.Prepend>
-                <Button style={{ background: '#66CDAA' }} id="inputGroup-sizing-lg show-map">Search test</Button>
+                <Button style={{ background: '#66CDAA' }} id="inputGroup-sizing-lg show-map">Search</Button>
               </InputGroup.Prepend>
             </InputGroup>
           </Col>
