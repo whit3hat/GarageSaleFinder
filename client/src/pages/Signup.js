@@ -53,6 +53,8 @@ function Signup() {
                 
 
             })
+
+            .then(res => geoLocation(formObject)
             .then(res => { }
                 )
             .catch(err => console.log(err));
@@ -60,23 +62,23 @@ function Signup() {
     };
 
     /*
-            GeoLocation Function
+        GeoLocation Function
     */
-//    function geoLocation(){
-//         console.log("hi")
-//         console.log(formObject);
-//     //    take the address from sign up fields and convert for DB
-//         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${formObject.formStreetNumber}+${formObject.formStreetName}+${formObject.formCity}+${formObject.formState}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
-//             .then(function(res) {
-//                 console.log(res)
-//             })
-//             .catch(function (err) {
-//                 console.log(err)
-//             })
-//             .then(function(res) {
+   function geoLocation(){
+        console.log("hi")
+        console.log(formObject);
+    //    take the address from sign up fields and convert for DB
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${formObject.formStreetNumber}+${formObject.formStreetName}+${formObject.formCity}+${formObject.formState}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+            .then(function(res) {
+                console.log(res)
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+            .then(function(res) {
 
-//             }); 
-//     }
+            }); 
+    }
 
     const [show, setShow] = useState(false);
 

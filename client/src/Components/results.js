@@ -1,14 +1,5 @@
-// var myLatlng = new google.maps.LatLng();
-// var mapOptions = {
-//   zoom: 8,
-//   center: myLatlng,
-//   mapTypeId: 'roadmap'
-// };
-// var map = new google.maps.Map(document.getElementById('map'),
-//     mapOptions);
 import React, { Component } from 'react';
 import {Row, Col, Container, ListGroup} from 'react-bootstrap';
-
 
 class  Results extends Component {
     render() { 
@@ -35,3 +26,4 @@ class  Results extends Component {
 }
  
 export default Results;
+

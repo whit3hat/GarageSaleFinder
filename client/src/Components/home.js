@@ -13,7 +13,7 @@ function Home(){
     <Nav className="mr-auto">
       {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
       <Nav.Link href="/home" component={Main}>Home</Nav.Link>
-      <Nav.Link href="../pages" component={Signup}>Log in or Sign up</Nav.Link>
+      <Nav.Link href="../pages" component={Signup}>Create Post</Nav.Link>
 
     </Nav>
     {/* <Form inline>

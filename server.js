@@ -4,7 +4,6 @@ const multer = require('multer');
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-// var Schema = mongoose.Schema;
 var db = require('./models');
 const User = require("./models/userModel.js");
 const routes = require('./routes');
