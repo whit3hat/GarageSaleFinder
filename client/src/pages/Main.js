@@ -19,7 +19,9 @@ function Main() {
         </Navbar.Collapse>
       </Navbar>   
       <Search />
+      <div className="mapContainer">
       <GoogleApiWrapper className="map"/>
+      </div>
     </div>
   )
 };

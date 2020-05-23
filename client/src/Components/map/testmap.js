@@ -28,12 +28,14 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <Map
-        google={this.props.google}
-        zoom={15}
-        style={mapStyles}
-        initialCenter={{ lat: -1.2884, lng: 36.8233 }}
-      />
+      <div style={{height: '100%', width: '100%'}}>
+        <Map
+          google={this.props.google}
+          zoom={15}
+          style={mapStyles}
+          initialCenter={{ lat: -1.2884, lng: 36.8233 }}
+        />
+      </div>
     );
   }
 }

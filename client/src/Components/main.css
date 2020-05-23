@@ -22,3 +22,6 @@
     font-family: 'Crafty Girls', cursive;
 font-weight: bolder;
   }
+  .MapContainer {
+    -webkit-writing-mode: vertical-rl !important;
+  }
