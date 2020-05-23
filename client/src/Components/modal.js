@@ -10,7 +10,7 @@ function Modal() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Sign up or Log in here
+        Create Post
       </Button>
 
       <Modal show={true} size="lg" onHide={handleClose} style={{top:'calc(50% - 170px)'}}>

@@ -65,26 +65,36 @@ function Signup() {
 
     
     /*
-            GeoLocation Function
+        GeoLocation Function
     */
-//    function geoLocation(){
-//         console.log("hi")
-//         console.log(formObject);
-//     //    take the address from sign up fields and convert for DB
-//         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${formObject.formStreetNumber}+${formObject.formStreetName}+${formObject.formCity}+${formObject.formState}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
-//             .then(function(res) {
-//                 console.log(res)
-//             })
-//             .catch(function (err) {
-//                 console.log(err)
-//             })
-//             .then(function(res) {
+   function geoLocation(){
+        console.log("hi")
+        console.log(formObject);
+    //    take the address from sign up fields and convert for DB
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${formObject.formStreetNumber}+${formObject.formStreetName}+${formObject.formCity}+${formObject.formState}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+            .then(function(res) {
+                console.log(res)
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
+            .then(function(res) {
 
-//             }); 
-//     }
+            }); 
+    }
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    
     return (
-        <Modal show={true} size="lg">
+        <div onClick={e => e.stopPropagation()}>
+
+        <Modal show={true} size="lg"onHide={handleClose}> 
+        
+        <Modal.Header closeButton>Signup or Login</Modal.Header>
             <ModalBody>
         <Form>
             <Form.Row>
@@ -182,17 +192,27 @@ function Signup() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
             </Form.Group> */}
-            <Button 
+            
+        </Form>
+        </ModalBody>
+        <Modal.Footer>
+        <Button 
             // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
                 
                 onClick={handleFormSubmit}
                 variant="primary" type="submit">
                 Submit
             </Button>
+            
             <Link to="/">Home</Link>
-        </Form>
-        </ModalBody>
+            <Link to="/">
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          </Link>
+        </Modal.Footer>
         </Modal>
+        </div>
 
     )
 };

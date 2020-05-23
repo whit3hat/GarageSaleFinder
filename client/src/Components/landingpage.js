@@ -8,10 +8,8 @@ function Landing(){
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      {/* <Nav.Link href="./Components/home.js">Home</Nav.Link> */}
       <Nav.Link href="/home" component={Main}>Home</Nav.Link>
-      <Nav.Link href="/results" component={Results}>Seeker</Nav.Link>
-      <Nav.Link href="/signup" component={Signup}>Log in or Sign up</Nav.Link>
+      <Nav.Link href="/signup" component={Signup}>Create Post</Nav.Link>
 
     </Nav>
     <Form inline>
