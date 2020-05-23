@@ -11,7 +11,7 @@ function Searching() {
             <InputGroup size="lg" className="search-box mt-5">
               <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Address" />
               <InputGroup.Prepend>
-                <Button style={{ background: '#66CDAA' }} id="inputGroup-sizing-lg show-map">Search</Button>
+                <Button style={{ background: '#66CDAA' }} id="inputGroup-sizing-lg show-map">Search test</Button>
               </InputGroup.Prepend>
             </InputGroup>
           </Col>

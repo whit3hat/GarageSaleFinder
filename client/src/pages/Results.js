@@ -1,7 +1,7 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-export default {
-    getMap: function(query) {
-        return axios.get(URL + query )
-    }
-};
+// export default {
+//     getMap: function(query) {
+//         return axios.get(URL + query )
+//     }
+// };
