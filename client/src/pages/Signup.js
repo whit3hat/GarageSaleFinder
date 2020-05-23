@@ -78,8 +78,18 @@ function Signup() {
             }); 
     }
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    
     return (
-        <Modal show={true} size="lg">
+        <div onClick={e => e.stopPropagation()}>
+
+        <Modal show={true} size="lg"onHide={handleClose}> 
+        
+        <Modal.Header closeButton>Signup or Login</Modal.Header>
             <ModalBody>
         <Form>
             <Form.Group controlId='formFirstName'>
@@ -166,17 +176,27 @@ function Signup() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
             </Form.Group> */}
-            <Button 
+            
+        </Form>
+        </ModalBody>
+        <Modal.Footer>
+        <Button 
             // disabled={!(formObject.formFirstName && formObject.formLastName && formObject.formBasicEmail)}
                 
                 onClick={handleFormSubmit}
                 variant="primary" type="submit">
                 Submit
             </Button>
+            
             <Link to="/">Home</Link>
-        </Form>
-        </ModalBody>
+            <Link to="/">
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          </Link>
+        </Modal.Footer>
         </Modal>
+        </div>
 
     )
 };
