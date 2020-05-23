@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './CurrentLocation';
-
-import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-import { FormControl } from 'react-bootstrap';
+// import { FormControl } from 'react-bootstrap';
 import axios from 'axios';
-
-const mapStyles = {
-  width: '75%',
-  height: '75%',
-};
+import API from '../../utils/API';
 
 // function geoLocation() {
-//   console.log("hi")
-//   console.log(formObject);
+//   console.log('geoLocation function')
+
+//   //API call to get all sales from the DB
+//   API.getUser(console.log('getUser API call'))
 //   //    take the address from sign up fields and convert for DB
 //   axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${formObject.formStreetNumber}+${formObject.formStreetName}+${formObject.formCity}+${formObject.formState}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
 //     .then(function (res) {
@@ -41,7 +37,7 @@ onMarkerClick = (props, marker, e) =>
     showingInfoWindow: true
   });
 
-  onMapClicked = (props) => {
+  onClose = (props) => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -54,7 +50,7 @@ onMarkerClick = (props, marker, e) =>
 
   render() {
     return (
-      <CurrentLocation
+      <Map
       centerAroundCurrentLocation
       google={this.props.google}
       >
@@ -63,14 +59,14 @@ onMarkerClick = (props, marker, e) =>
       <InfoWindow
         marker={this.state.activeMarker}
         visible={this.state.showingInfoWindow}
-        onMapClicked={this.onMapClicked}>
+        onClose={this.onClose}>
 
         <div>
           <h4>{this.state.selectedPlace.name}</h4>
         </div> 
 
         </InfoWindow>
-        </CurrentLocation>
+        </Map>
     );
   }
 }
