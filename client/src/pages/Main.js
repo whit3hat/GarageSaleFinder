@@ -4,6 +4,7 @@ import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 // import Results from './Results';
 import Signup from './Signup';
 import Search from "./Search"
+import GoogleApiWrapper from "../Components/map/testmap"
 
 function Main() {
   return (
@@ -18,6 +19,8 @@ function Main() {
         </Navbar.Collapse>
       </Navbar>   
       <Search />
+      <GoogleApiWrapper />
+      <p>Test</p>
     </div>
   )
 };
