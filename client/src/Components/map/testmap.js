@@ -3,10 +3,13 @@ import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './CurrentLocation';
 import { FormControl } from 'react-bootstrap';
 import axios from 'axios';
+import API from '../../utils/API';
 
 function geoLocation() {
-  console.log("hi")
-  
+  console.log('geoLocation function')
+
+  //API call to get all sales from the DB
+  API.getUser(console.log('getUser API call'))
   //    take the address from sign up fields and convert for DB
   axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${formObject.formStreetNumber}+${formObject.formStreetName}+${formObject.formCity}+${formObject.formState}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
     .then(function (res) {
