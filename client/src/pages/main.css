@@ -27,3 +27,9 @@
   .mt-5 {
     padding-top: 200px;
   }
+  .map {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 0;
+  }
