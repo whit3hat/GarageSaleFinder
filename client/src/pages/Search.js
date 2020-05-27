@@ -1,10 +1,12 @@
 import React from 'react';
 import { InputGroup, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
+import "../pages/main.css";
+
 
 
 function Searching() {
   return (
-    <div>
+    <div className="search-box">
       <Container>
         <Row>
           <Col>
