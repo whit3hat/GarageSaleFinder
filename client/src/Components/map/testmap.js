@@ -5,7 +5,6 @@ import CurrentLocation from './CurrentLocation';
 import Sales from '../sales';
 
 
-
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: false,
