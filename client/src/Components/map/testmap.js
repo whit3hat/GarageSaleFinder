@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import './style.css';
 import CurrentLocation from './CurrentLocation';
 import "../main.css";
 // import { FormControl } from 'react-bootstrap';
@@ -22,7 +23,7 @@ onMarkerClick = (props, marker, e) =>
   this.setState( {
     selectedPlace: props,
     activeMarker: marker,
-    showingInfoWindow: true
+    showingInfoWindow: true,
   });
 
   onClose = (props) => {
@@ -39,7 +40,7 @@ onMarkerClick = (props, marker, e) =>
       <div class="row map-style">
         <div class="offset-md-2 md-8">
       <Map
-      style={mapStyles}
+      
       centerAroundCurrentLocation
       google={this.props.google}
       >
@@ -59,6 +60,10 @@ onMarkerClick = (props, marker, e) =>
         </div>
         </div>
     );
+    
+  }
+  Sales(){
+    console.log(`sales`);
   }
 }
 
