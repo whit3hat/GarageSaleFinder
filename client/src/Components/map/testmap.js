@@ -2,10 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import './style.css';
 import CurrentLocation from './CurrentLocation';
-import "../main.css";
-// import { FormControl } from 'react-bootstrap';
-import axios from 'axios';
-import API from '../../utils/API';
+
 
 const mapStyles = {
   width: '75%',
@@ -61,9 +58,6 @@ onMarkerClick = (props, marker, e) =>
         </div>
     );
     
-  }
-  Sales(){
-    console.log(`sales`);
   }
 }
 
