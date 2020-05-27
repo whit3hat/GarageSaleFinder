@@ -22,6 +22,15 @@
     font-family: 'Crafty Girls', cursive;
 font-weight: bolder;
   }
-  .MapContainer {
-    -webkit-writing-mode: vertical-rl !important;
-  }
+  .Map {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.map-style{
+  padding-top: 25px;
+}
+.search-box {
+  padding-left: 45px;
+}

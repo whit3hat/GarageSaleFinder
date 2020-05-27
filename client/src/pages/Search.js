@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { InputGroup, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
+
 import Sales from '../Components/sales';
+
+import "../pages/main.css";
+
+
 
 
 function Searching() {
@@ -24,7 +29,7 @@ function handleFormSubmit(event) {
 
 
   return (
-    <div>
+    <div className="search-box">
       <Container>
         <Row>
           <Col>
