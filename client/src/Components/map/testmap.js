@@ -1,29 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import './style.css';
 import CurrentLocation from './CurrentLocation';
-// import { FormControl } from 'react-bootstrap';
-import axios from 'axios';
-import API from '../../utils/API';
+import Sales from '../sales';
 
-function geoLocation() {
-  console.log('geoLocation function')
 
-  //API call to get all sales from the DB
-  API.getUser()
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err))
-
-  //   .then(function (res) {
-  //     console.log(res)
-  //   })
-  //   .catch(function (err) {
-  //     console.log(err)
-  //   })
-  //   .then(function (res) {
-
-  //   });
-}
 
 export class MapContainer extends Component {
   state = {
@@ -54,6 +35,7 @@ onMarkerClick = (props, marker, e) =>
     return (
       
       <Map
+      
       centerAroundCurrentLocation
       google={this.props.google}
       >
@@ -71,6 +53,10 @@ onMarkerClick = (props, marker, e) =>
         </InfoWindow>
         </Map>
     );
+    
+  }
+  Sales(){
+    console.log(`sales`);
   }
 }
 
