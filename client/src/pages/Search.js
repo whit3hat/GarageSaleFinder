@@ -1,6 +1,6 @@
 import React from 'react';
 import { InputGroup, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
-
+import Sales from '../sales';
 
 function Searching() {
   return (

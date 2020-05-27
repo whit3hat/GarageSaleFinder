@@ -54,9 +54,6 @@ onMarkerClick = (props, marker, e) =>
     );
     
   }
-  Sales(){
-    console.log(`sales`);
-  }
 }
 
 export default GoogleApiWrapper({
