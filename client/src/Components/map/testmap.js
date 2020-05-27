@@ -2,8 +2,15 @@ import React, { Component, useState, useEffect } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import './style.css';
 import CurrentLocation from './CurrentLocation';
-import Sales from '../sales';
+import "../main.css";
+// import { FormControl } from 'react-bootstrap';
+import axios from 'axios';
+import API from '../../utils/API';
 
+const mapStyles = {
+  width: '75%',
+  height: '75%',
+};
 
 export class MapContainer extends Component {
   state = {
@@ -28,11 +35,10 @@ onMarkerClick = (props, marker, e) =>
     }
   };
 
-  
-
   render() {
     return (
-      
+      <div class="row map-style">
+        <div class="offset-md-2 md-8">
       <Map
       
       centerAroundCurrentLocation
@@ -51,6 +57,8 @@ onMarkerClick = (props, marker, e) =>
 
         </InfoWindow>
         </Map>
+        </div>
+        </div>
     );
     
   }
