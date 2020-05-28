@@ -1,73 +1,59 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import { InputGroup, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
-// import Sales from '../Components/sales';
 import API from '../utils/API';
-
-import Sales from '../Components/sales';
-
 import "../pages/main.css";
 
+class Search extends Component {
+    state = {
+      date: [],
+      location: [],
+      keyword: [],
+      description: []
+    };
 
-
-
-function Searching() {
-
-//setting initail state
-const [sales, setSales] = useState({});
-const [formObject, setFormObject] = useState({});
-
-useEffect(() => {
-  geoLocation()
-}, [])
-
-function geoLocation() {
-  console.log('geoLocation function')
-
-  //API call to get all sales from the DB
-  
-
- }
+    //when component mounts, get a list of all available garage sales
+    componentDidMount(){
+      API.getUser()
+      .then(res => this.setState(console.log(res)))
+      .catch(err => console.log(err));
+    }
 
 //handle updating the state when a user types in the search bar
-function handleInputChange(event) {
-  const {name, value} = event.target;
-  console.log(value)
-
-  
-  setFormObject({...formObject, [name]: value })
+ handleInputChange = event => {
+   this.setState({ search: event.target.value});
 };
 
 //When search is submitted, use the API to search for sales and place markers on map
-function handleFormSubmit(event) {
+ handleFormSubmit = event => {
   event.preventDefault();
-  console.log(formObject);
-  
-  API.getUser()
+  console.log();
+
+  API.getUser(this.state.search)
     .then(res => 
-      // setUsers(res.data)
       console.log(res.data)
-      // setSales(res.data)
     )
     .catch(err => console.log(err))
   console.log(event);
 };
 
 
-  return (
+  render() {
+    return (
     <div className="search-box">
       <Container>
         <Row>
           <Col>
             <InputGroup size="lg" className="search-box mt-3">
               <FormControl
-              onChange={handleInputChange} 
+              handleInputChange={this.handleInputChange}
               aria-label="Large"
               name='address'
               aria-describedby="inputGroup-sizing-sm" 
               placeholder="Address" />
 
               <InputGroup.Prepend>
-                <Button onClick={handleFormSubmit}
+                <Button 
+                handleFormSubmit={this.handleFormSubmit}
                 style={{ background: '#66CDAA' }} 
                 id="inputGroup-sizing-lg show-map">Search</Button>
 
@@ -77,7 +63,8 @@ function handleFormSubmit(event) {
         </Row>
       </Container>
     </div>
-  )
+    )
+  }
 };
 
-export default Searching;
+export default Search;
