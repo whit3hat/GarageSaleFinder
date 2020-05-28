@@ -21,7 +21,7 @@ class  FileUpload extends Component {
         return ( 
             <div className="container">
             <div className="jumbotron">
-              <h1 className="display-4">Image Uplaoder</h1>
+              <h1 className="display-4">Image Uploader</h1>
               <p className="lead">
                 Upload and retrieve images from a database
               </p>

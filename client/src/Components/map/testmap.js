@@ -4,6 +4,10 @@ import './style.css';
 import CurrentLocation from './CurrentLocation';
 
 
+const mapStyles = {
+  width: '75%',
+  height: '75%',
+};
 
 export class MapContainer extends Component {
   state = {
@@ -28,11 +32,10 @@ onMarkerClick = (props, marker, e) =>
     }
   };
 
-  
-
   render() {
     return (
-      
+      <div class="row map-style">
+        <div class="offset-md-2 md-8">
       <Map
       
       centerAroundCurrentLocation
@@ -51,6 +54,8 @@ onMarkerClick = (props, marker, e) =>
 
         </InfoWindow>
         </Map>
+        </div>
+        </div>
     );
     
   }

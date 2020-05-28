@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { InputGroup, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
+<<<<<<< HEAD
 // import Sales from '../Components/sales';
 import API from '../utils/API';
+=======
+
+import Sales from '../Components/sales';
+
+import "../pages/main.css";
+
+
+
+>>>>>>> 6a868818f7057b3b7f51a30297a2e88cc444cfa6
 
 function Searching() {
 
@@ -42,7 +52,7 @@ function handleFormSubmit(event) {
 
 
   return (
-    <div>
+    <div className="search-box">
       <Container>
         <Row>
           <Col>
