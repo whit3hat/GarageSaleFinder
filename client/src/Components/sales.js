@@ -3,11 +3,11 @@ import API from '../utils/API';
 
 
 function Sales() {
-    const [sales, setSales] = useState([])
+//     const [sales, setSales] = useState([])
   
-    useEffect(() => {
-    geoLocation()
-  }, [])
+//     useEffect(() => {
+//     geoLocation()
+//   }, [])
   
   function geoLocation() {
     console.log('geoLocation function')
