@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import './style.css';
+import "../main.css";
 import CurrentLocation from './CurrentLocation';
 
 
@@ -37,7 +38,7 @@ onMarkerClick = (props, marker, e) =>
       <div class="row map-style">
         <div class="offset-md-2 md-8">
       <Map
-      
+      style={mapStyles}
       centerAroundCurrentLocation
       google={this.props.google}
       >
