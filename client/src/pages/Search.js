@@ -24,13 +24,7 @@ function geoLocation() {
   console.log('geoLocation function')
 
   //API call to get all sales from the DB
-  API.getUser()
-    .then(res => 
-      // setUsers(res.data)
-      console.log(res.data)
-      // setSales(res.data)
-    )
-    .catch(err => console.log(err))
+  
 
  }
 
@@ -38,12 +32,23 @@ function geoLocation() {
 function handleInputChange(event) {
   const {name, value} = event.target;
   console.log(value)
+
+  
   setFormObject({...formObject, [name]: value })
 };
 
 //When search is submitted, use the API to search for sales and place markers on map
 function handleFormSubmit(event) {
   event.preventDefault();
+  console.log(formObject);
+  
+  API.getUser()
+    .then(res => 
+      // setUsers(res.data)
+      console.log(res.data)
+      // setSales(res.data)
+    )
+    .catch(err => console.log(err))
   console.log(event);
 };
 
