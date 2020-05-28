@@ -3,6 +3,7 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import './style.css';
 import "../main.css";
 import CurrentLocation from './CurrentLocation';
+import Search from '../../pages/Search';
 
 
 const mapStyles = {
