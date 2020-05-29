@@ -1,6 +1,6 @@
 import React from 'react';
 import "./main.css"
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 // import Results from './Results';
 import Signup from './Signup';
 import Search from "./Search"
