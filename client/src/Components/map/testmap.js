@@ -4,6 +4,8 @@ import './style.css';
 import CurrentLocation from './CurrentLocation';
 import Search from '../../pages/Search';
 
+//Pass Search results into the props of the MapContainer Component using the state of Search
+
 
 const mapStyles = {
   width: '75%',
