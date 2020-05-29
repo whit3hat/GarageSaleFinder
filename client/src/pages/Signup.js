@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { Form, Button, ModalBody, Modal, Col } from 'react-bootstrap';
 import API from '../utils/API';
-import axios from 'axios';
 import { Link } from "react-router-dom"
 
 
@@ -14,7 +13,6 @@ function Signup() {
        const handleShow = () => setShow(true);
     
     //set components initial state
-    // const [signup, setSignup] = useState([])
     const [formObject, setFormObject] = useState({})
 
     //Handles updating component state when the user types into the input fields
