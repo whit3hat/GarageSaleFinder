@@ -1,6 +1,5 @@
 .modal {
     position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -17,10 +16,13 @@
   border: 1px solid #888;
   width: 80%;
   }
+  .modal-backdrop {
+    z-index: 0;
+  }
 
   * {
     font-family: 'Crafty Girls', cursive;
-font-weight: bolder;
+    font-weight: bolder;
   }
   .Map {
     display: block !important;

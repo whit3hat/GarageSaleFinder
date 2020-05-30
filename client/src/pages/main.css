@@ -9,7 +9,6 @@
     background-attachment: fixed;
     font-family: 'Crafty Girls', cursive;
     font-weight: bolder;
-    overflow: hidden;
   }
 
 
@@ -20,7 +19,6 @@
   Button {
     position: relative;
     z-index: 1;
-    overflow: hidden;
   }
   Button:hover {
     color: #071a58;
