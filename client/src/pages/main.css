@@ -9,6 +9,7 @@
     background-attachment: fixed;
     font-family: 'Crafty Girls', cursive;
     font-weight: bolder;
+    overflow-x: hidden;
   }
 
 

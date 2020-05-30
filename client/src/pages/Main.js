@@ -22,7 +22,7 @@ function Main() {
       <Search />
       <div className="mapContainer">
         {/* <GoogleApiWrapper className="map"/> */}
-        <Map />
+  
       </div>
     </div>
   )
