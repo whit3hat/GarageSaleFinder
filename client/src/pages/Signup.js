@@ -177,7 +177,7 @@ function Signup() {
             </Button>
                     <Link to="/">
                         <Button variant="secondary" onClick={handleClose}>
-                            Close
+                            Home
           </Button>
                     </Link>
                 </Modal.Footer>

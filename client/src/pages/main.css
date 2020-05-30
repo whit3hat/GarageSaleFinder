@@ -35,3 +35,9 @@
   .InputGroup .search-box {
     padding-left: 25px;
   }
+  .locationButton {
+    padding-left: 5px;
+  }
+  .location-search-input {
+    width: 500px;
+  }
