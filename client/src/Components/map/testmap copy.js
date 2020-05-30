@@ -13,7 +13,7 @@ const mapStyles = {
   height: '75%',
 };
 
-export class MapContainer extends Component {   /// this is going to be a function and we are passing the props
+export class MapContainer extends Component {
   state = {
     showingInfoWindow: false,
     activeMarker: {},
