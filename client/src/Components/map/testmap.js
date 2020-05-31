@@ -5,25 +5,28 @@ import "../main.css";
 import CurrentLocation from './CurrentLocation';
 import Search from '../../pages/Search';
 
-//Pass Search results into the props of the MapContainer Component using the state of Search
-
-
 const mapStyles = {
   width: '75%',
   height: '75%',
 };
 
-function Mapshow(props) {   /// this is going to be a function and we are passing the prop
+function Mapshow(props) {   // this is going to be a function and we are passing the prop
 
   return (
     <div class="row map-style">
-      <h1>{props.testtitle}</h1>
+
       <div class="offset-md-2 md-8">
         <Map
           style={mapStyles}
-          zoom= {14}
+          zoom= {15}
+          panControl={true}
+          zoomControl={true}
+          mapTypeControl={false}
+          scaleControl={false}
+          streetViewControl={true}
+          overviewMapControl={true}
+          rotateControl={true}
           center= {props.location}
-          // centerAroundCurrentLocation={ false}
           visible= {true}
           google={props.google}
         >

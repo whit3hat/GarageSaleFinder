@@ -1,7 +1,4 @@
-// import React, { useState, useEffect, Component } from 'react';
-// import { InputGroup, FormControl, Container, Col, Row, Button } from 'react-bootstrap';
 import React from 'react';
-// const { forwardRef, useRef, useImperativeHandle } = React;
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
@@ -19,7 +16,7 @@ class LocationSearchInput extends React.Component {
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
-      location: { }
+      location: {}
 
     };
   }
@@ -77,7 +74,7 @@ class LocationSearchInput extends React.Component {
     return (
       <>
         <div class="row">
-          <div class="col offset-md-6 md-12">
+          <div class="col offset-md-4 md-10">
             <PlacesAutocomplete
               value={this.state.address}
               onChange={this.handleChange}
@@ -120,8 +117,6 @@ class LocationSearchInput extends React.Component {
         </div>
         <div className="mapContainer">
           <GoogleApiWrapper
-            //  google={props.google}
-
             onMarkerClick={this.onMarkerClick}
             activeMarker={this.state.activeMarker}
             showingInfoWindow={this.state.showingInfoWindow}
@@ -129,7 +124,6 @@ class LocationSearchInput extends React.Component {
             selectedPlace={this.state.selectedPlace}
             location={this.state.location}
             className="map" />
-
         </div>
       </>
     );
