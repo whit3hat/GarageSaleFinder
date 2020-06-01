@@ -4,7 +4,8 @@ import { Navbar, Nav } from 'react-bootstrap';
 // import Results from './Results';
 import Signup from './Signup';
 import Search from "./Search"
-import GoogleApiWrapper from "../Components/map/testmap"
+// import GoogleApiWrapper from "../Components/map/testmap"
+import Map from '../Components/map/testmap';
 
 function Main() {
   return (
@@ -19,9 +20,8 @@ function Main() {
         </Navbar.Collapse>
       </Navbar>   
       <Search />
-      <div className="mapContainer">
-      <GoogleApiWrapper className="map"/>
-      </div>
+      <Map />
+      
     </div>
   )
 };
