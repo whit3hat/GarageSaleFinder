@@ -7,6 +7,12 @@ import API from '../utils/API';
 import "../pages/main.css";
 import GoogleApiWrapper from "../Components/map/testmap"
 import CurrentLocation from "../Components/map/CurrentLocation";
+import Axios from 'axios';
+
+Axios.get(`https:maps.googleapis.com/maps/api.geocode/json?address=${streetnumber}+${streetname}+${city}+${state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+  .then(function(res){
+
+  });
 
 class LocationSearchInput extends React.Component {
   constructor(props) {
@@ -20,6 +26,8 @@ class LocationSearchInput extends React.Component {
 
     };
   }
+
+  
 
   // componentdidmount and set the location with the current location
 
