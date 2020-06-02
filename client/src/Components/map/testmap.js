@@ -5,66 +5,50 @@ import "../main.css";
 import CurrentLocation from './CurrentLocation';
 import Search from '../../pages/Search';
 
-//Pass Search results into the props of the MapContainer Component using the state of Search
-
-
 const mapStyles = {
   width: '75%',
   height: '75%',
 };
 
-export class MapContainer extends Component {   /// this is going to be a function and we are passing the props
-  state = {
-    showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {},
-  };
+function Mapshow(props) {   // this is going to be a function and we are passing the prop
 
-onMarkerClick = (props, marker, e) =>
-  this.setState( {
-    selectedPlace: props,
-    activeMarker: marker,
-    showingInfoWindow: true,
-  });
+  return (
+    <div class="row map-style">
 
-  onClose = (props) => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      })
-    }
-  };
+      <div class="offset-md-2 md-8">
+        <Map
+          style={mapStyles}
+          zoom= {15}
+          panControl={true}
+          zoomControl={true}
+          mapTypeControl={false}
+          scaleControl={false}
+          streetViewControl={true}
+          overviewMapControl={true}
+          rotateControl={true}
+          center= {props.location}
+          visible= {true}
+          google={props.google}
+        >
+          <Marker onClick={props.onMarkerClick} name={'Current location'} />
 
-  render() {
-    return (
-      <div class="row map-style">
-        <div class="offset-md-2 md-8">
-      <Map
-      style={mapStyles}
-      centerAroundCurrentLocation
-      google={this.props.google}
-      >
-     <Marker onClick={this.onMarkerClick} name={'Current location'} />
+          <InfoWindow
+            marker={props.activeMarker}
+            visible={props.showingInfoWindow}
+            onClose={props.onClose}>
 
-      <InfoWindow
-        marker={this.state.activeMarker}
-        visible={this.state.showingInfoWindow}
-        onClose={this.onClose}>
+            <div>
+              <h4>{props.selectedPlace.name}</h4>
+            </div>
 
-        <div>
-          <h4>{this.state.selectedPlace.name}</h4>
-        </div> 
-
-        </InfoWindow>
+          </InfoWindow>
         </Map>
-        </div>
-        </div>
-    );
-    
-  }
+      </div>
+    </div>
+  );
+
 }
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs'
-})(MapContainer);
+})(Mapshow);
