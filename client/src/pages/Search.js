@@ -7,12 +7,9 @@ import API from '../utils/API';
 import "../pages/main.css";
 import GoogleApiWrapper from "../Components/map/testmap"
 import CurrentLocation from "../Components/map/CurrentLocation";
-// import axios from 'axios';
+import axios from 'axios';
 
-// axios.get(`https:maps.googleapis.com/maps/api.geocode/json?address=${streetnumber}+${streetname}+${city}+${state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
-//   .then(function(res){
 
-//   });
 
 
 class LocationSearchInput extends React.Component {
@@ -35,10 +32,15 @@ class LocationSearchInput extends React.Component {
   componentDidMount() {
     //API call to get the user information from the DB
       API.getUser()
-      .then(res => this.setState(console.log(res)))
+      .then(res => this.setState(
+        //API call to google maps to convert to the address into a lng and lat
+          axios.get(`https:maps.googleapis.com/maps/api.geocode/json?address=${streetnumber}+${streetname}+${city}+${state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+          .then(function(res){
+          })
+       ))
       .catch(err => console.log(err));
 
-      
+
     if (navigator && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(pos => {
         const coords = pos.coords;
