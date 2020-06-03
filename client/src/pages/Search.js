@@ -9,7 +9,7 @@ import GoogleApiWrapper from "../Components/map/testmap"
 import CurrentLocation from "../Components/map/CurrentLocation";
 import axios from 'axios';
 
-
+const URL = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
 
 
 class LocationSearchInput extends React.Component {
@@ -32,16 +32,20 @@ class LocationSearchInput extends React.Component {
   componentDidMount() {
     //API call to get the user information from the DB
       API.getUser()
-      .then(res => (
-                //API call to google maps to convert to the address into a lng and lat
-            axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${res.location.address}+${res.location.street}+${res.location.city},+${res.location.state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+      .then(res =>
+        {for ( var i = 0; i < res.location.length; i++)
+            axios.get(`${URL}${res.location.address}+${res.location.street}+${res.location.city},+${res.location.state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
               
               .then(response => (console.log(response)))
               .catch(error => console.log(error))
+        }
       )
+                //API call to google maps to convert to the address into a lng and lat
+            
+       .catch(err => console.log(err))
 
 
-      .catch(err => console.log(err)))
+      
         
 
           
