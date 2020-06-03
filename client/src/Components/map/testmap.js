@@ -38,7 +38,10 @@ function Mapshow(props) {   // this is going to be a function and we are passing
             onClose={props.onClose}>
 
             <div>
-              <h4>{props.selectedPlace.name}</h4>
+              <h5>111 Test Ave</h5>
+              <h6>Couch, end tables, bed frame, recliner, baby clothes</h6>
+              <h6>Sale Date: 6/3/2020</h6>
+              <a href="test">Contact Seller</a>
             </div>
 
           </InfoWindow>
