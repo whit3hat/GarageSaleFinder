@@ -5,8 +5,17 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete';
 import API from '../utils/API';
 import "../pages/main.css";
+import Sales from '../Components/sales';
 import GoogleApiWrapper from "../Components/map/testmap"
 import CurrentLocation from "../Components/map/CurrentLocation";
+
+function geoLocation() {
+  console.log('geoLocation function')
+
+  //API call to get all sales from the DB
+
+
+ }
 
 class LocationSearchInput extends React.Component {
   constructor(props) {
@@ -17,13 +26,14 @@ class LocationSearchInput extends React.Component {
       activeMarker: {},
       selectedPlace: {},
       location: {}
-
     };
   }
 
-  // componentdidmount and set the location with the current location
-
   componentDidMount() {
+
+    API.getUser()
+    .then(res => this.setState(console.log(res)))
+    .catch(err => console.log(err));
 
     if (navigator && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(pos => {
