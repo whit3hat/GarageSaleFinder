@@ -36,21 +36,19 @@ class LocationSearchInput extends React.Component {
   componentDidMount() {
     //API call to get the user information from the DB
       API.getUser()
-      .then(res =>
-        {for ( var i = 0; i < res.location.length; i++)
-            axios.get(`${URL}${res.location.address}+${res.location.street}+${res.location.city},+${res.location.state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
+      .then(res => console.log(res.data[0].location)
+        // {for ( var i = 0; i < res.data[i].location.length; i++)
+        //   console.log(i)
+        //     // axios.get(`${URL}${res.data.location.address}+${res.location.street}+${res.location.city},+${res.location.state}&key=AIzaSyAQV4OnQ1CIWg_QP0L_yL1lsftxK5K6CUs`)
               
-              .then(response => (console.log(response)))
-              .catch(error => console.log(error))
-        }
+        //       // .then(response => (console.log(response)))
+        //       // .catch(error => console.log(error))
+        // }
       )
                 //API call to google maps to convert to the address into a lng and lat
             
        .catch(err => console.log(err))
 
-
-      
-        
 
           
 
